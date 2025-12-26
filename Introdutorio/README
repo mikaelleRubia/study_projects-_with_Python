@@ -1,0 +1,2 @@
+Rodar a aplicação:
+python -m flask run

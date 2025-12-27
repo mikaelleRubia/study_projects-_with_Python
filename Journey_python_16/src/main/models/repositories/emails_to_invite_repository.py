@@ -16,6 +16,7 @@ class EmailToInviteRepository:
                emails_to_invite["trip_id"], 
                 emails_to_invite["email"], 
             )
+
         )
         self.__conn.commit()
 
@@ -26,8 +27,8 @@ class EmailToInviteRepository:
             SELECT * FROM 'emails_to_invite' WHERE id =? 
             ''', (emails_to_invite_id, )
         )
-        trip = cursor.fetchone()
-        return trip
+        emails_to_invite = cursor.fetchone()
+        return emails_to_invite
     
     def update_emails_to_invite_email(self, emails_to_invite_id: str):
         cursor = self.__conn.cursor()

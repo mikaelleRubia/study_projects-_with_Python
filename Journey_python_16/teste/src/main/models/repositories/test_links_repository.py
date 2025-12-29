@@ -5,7 +5,7 @@ from src.main.models.settings.db_connection_handler import db_connection_handler
 
 db_connection_handler.connect()
 
-@pytest.mark.skip(reason="interação com o banco")
+# @pytest.mark.skip(reason="interação com o banco")
 def test_create_links():
     conn = db_connection_handler.get_connection()
     link_repository = LinkRepository(conn)
@@ -19,6 +19,15 @@ def test_create_links():
     }
     link_repository.create_links(links_infos)
     
+
+def test_find_links_all():
+    conn = db_connection_handler.get_connection()
+    link_repository = LinkRepository(conn)
+
+    links = link_repository.find_links_all()
+
+    assert isinstance(links, list)
+
 
 def test_find_links():
     conn = db_connection_handler.get_connection()

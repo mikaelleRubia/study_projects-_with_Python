@@ -1,4 +1,4 @@
-from view.first_view import introduction_page
+from ..view.first_view import introduction_page
 from .constructor.song_register_constructor import song_register_process
 
 def start() -> None:

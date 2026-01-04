@@ -1,4 +1,4 @@
-from view.song_register_view import SongRegisterView
+from ...view.song_register_view import SongRegisterView
 
 
 def song_register_process():

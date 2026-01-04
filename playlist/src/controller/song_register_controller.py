@@ -26,9 +26,9 @@ class SongRegisterController:
 
     def __format_response(self, new_song_informations: dict) -> dict:
         return {
-            "sucess": True,
+            "success": True,
             "count": 1,
-            "attrinbute": {
+            "attribute": {
                 "title": new_song_informations["title"]
             }
 
@@ -36,6 +36,6 @@ class SongRegisterController:
     
     def __format_error_response(self, error: Exception) -> dict:
             return {
-                "sucess": False,
+                "success": False,
                 "error": str(error),
             }

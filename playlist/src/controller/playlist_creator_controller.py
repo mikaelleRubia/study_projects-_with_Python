@@ -16,7 +16,7 @@ class PlaylistCreatorController:
 
     def __get_all_musics_and_verify(self) -> list:
         musics = musics_repository.get_all_songs()
-        if musics is []:
+        if musics == []:
             raise Exception("Lista de musicas vazia!")
         return musics
 

@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from extensions.database import db
 from extensions.login import login_manager
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user, login_required
 from models.user import User
 
 
@@ -18,6 +18,15 @@ login_manager.login_view= 'login'
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
+
+
+
+@app.route("/logout", methods=["GET"])
+@login_required
+def logout():
+    logout_user()
+    return jsonify({"message":"Logout realizada com sucesso"}), 200
+
 
 @app.route("/login", methods=["POST"])
 def login():

@@ -43,5 +43,20 @@ def login():
             return jsonify({"message":"Autenticação realizada com sucesso"}), 200
     return jsonify({"message":"Credenciais inválidas"}), 400
 
+
+@app.route("/user", methods=["POST"])
+def created():
+    data = request.json
+    username = data.get("username")
+    password = data.get("password")
+
+    if username and password:
+        user_now = User(username= username, password=password)
+        db.session.add(user_now)
+        db.session.commit()
+
+        return jsonify({"message":"User salvo com sucesso"}), 200
+    return jsonify({"message":"Dados inválidas"}), 400
+
 if __name__ == '__main__':
     app.run(debug=True)

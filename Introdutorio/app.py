@@ -26,7 +26,7 @@ def create_tasks():
     task_control += 1
     tasks.append(task)
     return jsonify({
-        "message":"Teste",
+        "message":"Sucesso",
         "task": task.to_dict(),
         "task_control":task_control
         }),201

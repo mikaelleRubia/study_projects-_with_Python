@@ -1,0 +1,18 @@
+[project]
+name = "task1"
+version = "1"
+description = "teste"
+authors = [
+    {name = "05792803579",email = "mrubia@apoioprodesp.sp.gov.br"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "flower (>=2.0.1,<3.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
